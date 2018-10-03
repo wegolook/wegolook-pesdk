@@ -1,0 +1,59 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Test</title>
+        <base href="/">
+
+        <!-- React Dependencies for the SDK UI -->
+        <script
+            type="text/javascript"
+            src="pesdk-html5-build-4.12.1/js/vendor/react.production.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="pesdk-html5-build-4.12.1/js/vendor/react-dom.production.min.js"
+        ></script>
+        <!-- PhotoEditor SDK -->
+        <script
+            type="text/javascript"
+            src="pesdk-html5-build-4.12.1/js/PhotoEditorSDK.min.js"
+        ></script>
+        <!-- PhotoEditor SDK UI -->
+        <script
+            type="text/javascript"
+            src="pesdk-html5-build-4.12.1/js/PhotoEditorSDK.UI.ReactUI.min.js"
+        ></script>
+        <link rel="stylesheet" href="/pesdk-html5-build-4.12.1/css/PhotoEditorSDK.UI.ReactUI.min.css">
+    </head>
+
+    <body>
+        <div
+        id="canv"
+        style="width: 100vw; height: 100vh;"
+    ></div>
+    <script>
+ 
+var img = new Image();
+img.crossOrigin = 'anonymous';
+img.src = 'https://devreports-wegolook-com.s3-accelerate.amazonaws.com/looks/579f9f6e7d9b7f030078c0ad/looker/f8f26de7-093d-474e-b07f-2c2812779738.jpg';
+
+            window.onload = function () {
+                        var box = document.getElementById('canv')
+                        var thing = new PhotoEditorSDK.UI.ReactUI({
+                container: box,
+                // Please replace this with your license: https://www.photoeditorsdk.com/dashboard/subscriptions
+                license: '{"owner":"Kolbey Pruitt","version":"2.1","enterprise_license":false,"available_actions":["magic","filter","transform","sticker","text","adjustments","brush","focus","frames","camera"],"features":["adjustment","filter","focus","overlay","transform","text","sticker","frame","brush","camera","textdesign","library","export"],"platform":"HTML5","app_identifiers":[],"api_token":"BQmHE2zpmuTFzAsbNyBOiw","domains":["https://api.photoeditorsdk.com"],"issued_at":1536166334,"expires_at":1538611200,"signature":"DWBEQd1jd/W39evYqFgTDLhbwR6/YxrtcffrU5QKb1DcP74vQkj8TJWzXLBpXVxYoWkQxVtovV0CuQgUBAUQNPRSwVcWOHhx2CHasEm+n68+ViBbRYlxw2N4sGC9+Pbws62pUuTBO2ZdmqLNdbKubwodM5cVNChhVgI6ZH8FoqYTRJGFIlxEMIX388IO1uzZXUcTCOa+043Q9gI3NnfJ/Prrqlb1QxMihnrPuLhE9F5LyX+KY620WnEM1KLM6Ev67vqXNkmTR6FPVYP9le8JV1io64XLP+6Bg6aoh05+TLeX3SR4apnN2TvJRYIV7eYPxufgQCbtCmf/+/mSQgPnxjAHJClTLyrhxz5uq/h75RQi/P5Hlh3ZRXnkBnHyHbYiWgJU4436YHHEYKh0h8y+kmrE6OIjABiui6bc7ft8B0NQSY0gULakn8Frc2GxeQRB5mgcAKeV0pBq5yGCHYtwLZZyPSnFnzbDSfw5xvQEL3/VnUWc682CgjeJPBoEAmO2mb/PGeRJjQX+PwQjEj9OLGncw5on5LWRcJAgm3nQg5A4jTMD2j+fRj6GFUzm1mvsV4fqadEYNw/4exZSWH/oWR3RSs9lwHlYek/+IXvMGsYTiDEPCHtWcovhiHhwCkk0iiHdp0B4YOl8ajN2HLxmcd+flYBX3SGnBzXh7OR2xO0="}',
+                assets: {
+                // This should be the absolute path to your `assets` directory
+                baseUrl: '/pesdk-html5-build-4.12.1/assets'
+                },
+                editor: {
+                image: img
+                }
+            });
+            }
+    </script>
+
+    </body>
+</html>
